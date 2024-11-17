@@ -1,0 +1,14 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block title %}Página Principal{% endblock %}
+
+{% block content %}
+<div class="jumbotron bg-light p-5 rounded mt-4">
+    <div class="row"> 
+        <div class="col-lg-8 col-md-10 col-sm-12 mx-auto text-center">
+            <h2 class="display-4">Catálogo de Vehículos</h2><br>
+            <p class="lead">Bienvenido! Te invitamos a revisar nuestro catálogo</p>
+            <hr class="my-4">
+            <p>¿Nuevo aquí? <a href="{% url 'usuarios:registro' %}">Regístrate</a> para disfrutar de más funcionalidades.</p>
+            <p>¿Ya tienes cuenta en nuestro sitio? <a href="{% url 'login' %}">Inicia Sesión</a></p>
+{% endblock %}

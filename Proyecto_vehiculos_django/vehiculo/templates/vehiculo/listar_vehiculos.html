@@ -1,0 +1,40 @@
+{% extends 'vehiculo/base.html' %}
+
+{% block title %}Listado de Vehículos{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="my-4">Listado de Vehículos</h1>
+
+        {% if vehiculos %}
+        <table class="table table-bordered border border-dark-subtle table-striped table-hover table-responsive">
+            <thead class="table-dark">
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Serial Carrocería</th>
+                    <th>Serial Motor</th>
+                    <th>Categoría</th>
+                    <th>Precio</th>
+                    <th>Condición de Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vehiculo in vehiculos %}
+                    <tr>
+                        <td>{{ vehiculo.marca }}</td>
+                        <td>{{ vehiculo.modelo }}</td>
+                        <td>{{ vehiculo.serial_carroceria }}</td>
+                        <td>{{ vehiculo.serial_motor }}</td>
+                        <td>{{ vehiculo.categoria }}</td>
+                        <td>{{ vehiculo.precio|floatformat:1 }}</td>
+                        <td>{{ vehiculo.condicion_precio }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% else %}
+    <p>No hay vehículos disponibles actualmente</p>
+{% endif %}        
+    </div>
+{% endblock %}
